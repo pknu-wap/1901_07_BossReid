@@ -11,7 +11,7 @@ public class ArrowBody : MonoBehaviour
 
     void Start()
     {
-        // 처음에 화을 발사할 수 있도록 제어변수를 true로 설정
+        // 처음에 화살을 발사할 수 있도록 제어변수를 true로 설정
         FireState = true;
     }
 
