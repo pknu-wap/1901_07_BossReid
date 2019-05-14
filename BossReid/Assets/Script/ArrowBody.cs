@@ -6,6 +6,8 @@ public class ArrowBody : MonoBehaviour
 {
     public GameObject Arrow;            // 복제할 화살 오브젝트
     public Transform ArrowLocation;     // 화살이 발사될 위치
+    [Header("재발사 속도")]
+    [Range(0.001f,3f)]
     public float FireDelay;             // 화살 발사 속도(화살이 날아가는 속도x)
     private bool FireState;             // 화살 발사 속도를 제어할 변수
     public float arrowSpeed;
@@ -58,10 +60,6 @@ public class ArrowBody : MonoBehaviour
                 StartCoroutine(FireCycleControl());
                 // "Arrow"를 "ArrowLocation"의 위치에 "ArrowLocation"의 방향으로 복제한다.
 
-                GameObject s =Instantiate(Arrow, ArrowLocation.position, ArrowLocation.rotation);
-                s.GetComponent<ArrowMove>().dir = transform.right;
-                Debug.LogWarning(transform.right);
-
                 //  화살풀에서 발사되지 않은 화살을 찾아서 발사합니다.
                 for (int i = 0; i < ArrowMaxPool; i++)
                 {
@@ -72,6 +70,7 @@ public class ArrowBody : MonoBehaviour
                         ArrowArray[i] = MPool.NewItem();
                         // 해당 화살의 위치를 화살 발사지점으로 맞춘다.
                         ArrowArray[i].transform.position = ArrowLocation.transform.position;
+                        ArrowArray[i].GetComponent<ArrowMove>().dir = transform.right;
                         // 발사 후에 for문을 바로 빠져나간다.
                         break;
                     }
