@@ -7,7 +7,7 @@ public class ArrowBody : MonoBehaviour
     public GameObject Arrow;            // 복제할 화살 오브젝트
     public Transform ArrowLocation;     // 화살이 발사될 위치
     [Header("재발사 속도")]
-    [Range(0.001f,3f)]
+    [Range(0f,3f)]
     public float FireDelay;             // 화살 발사 속도(화살이 날아가는 속도x)
     private bool FireState;             // 화살 발사 속도를 제어할 변수
     public float arrowSpeed;
