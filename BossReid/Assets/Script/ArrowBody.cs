@@ -9,7 +9,7 @@ public class ArrowBody : MonoBehaviour
     [Header("재발사 속도")]
     [Range(0f,3f)]
     public float FireDelay;             // 화살 발사 속도(화살이 날아가는 속도x)
-    private bool FireState;             // 화살 발사 속도를 제어할 변수
+    public bool FireState;             // 화살 발사 속도를 제어할 변수
     public float arrowSpeed;
 
     public int ArrowMaxPool;            //메모리 풀에 저장할 화살 개수

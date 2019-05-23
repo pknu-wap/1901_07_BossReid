@@ -17,16 +17,21 @@ public class HeroMove : MonoBehaviour
     bool isMoving = false;
     bool isJumping;
 
+    public ArrowBody Fstate;   //발사 상태 
+
     Vector3 movement;
 
     public static float horizontalMove;
     private Quaternion Up = Quaternion.identity;
+
+
 
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody>(); //컴포넌트를 불러옴
         animator = GetComponent<Animator>(); //애니메이터 불러오기 
         jumpCount = 0;
+        Fstate =new ArrowBody();       // 화살 쏘는 상태 초기화 new 아니라는 데 뭘 써야할 지 몰라서 일단 놔 뒀음 
     }
 
     private void OnCollisionEnter(Collision col)
@@ -45,6 +50,7 @@ public class HeroMove : MonoBehaviour
             Debug.Log("스턴!");
             moveSpeed = 0f;
             jumpPower = 0f;
+            Fstate.FireState = false;               // 스턴 상태일 때 공격 안나가게 공격 불가 상태로 만듬
             StartCoroutine(TimeStun());
         }
     }
@@ -80,6 +86,8 @@ public class HeroMove : MonoBehaviour
         stun = false;
         moveSpeed = 2f;
         jumpPower = 3f;
+        isGrounded = true;     //코루틴 돌아오고 땅에 닿아있는 판정이랑 점프 카운트 복구
+        jumpCount = 2;
     }
 
     public void MoveRight()
