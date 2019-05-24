@@ -9,7 +9,7 @@ public class ArrowBody : MonoBehaviour
     [Header("재발사 속도")]
     [Range(0f,3f)]
     public float FireDelay;             // 화살 발사 속도(화살이 날아가는 속도x)
-    public bool FireState;             // 화살 발사 속도를 제어할 변수
+    public bool FireState;              // 화살 발사 속도를 제어할 변수
     public float arrowSpeed;
 
     public int ArrowMaxPool;            //메모리 풀에 저장할 화살 개수
@@ -18,6 +18,10 @@ public class ArrowBody : MonoBehaviour
 
     Rigidbody rb;
     Rigidbody arrowrb;
+
+    Animator animatorA;              //여기도 똑같이 애니메이터 만듬 
+
+    //bool isAttack = false;          //공격을 위한 불 값 변수
 
 
     private void OnApplicationQuit()
@@ -39,12 +43,17 @@ public class ArrowBody : MonoBehaviour
         MPool.Create(Arrow, ArrowMaxPool);
         // 배열도 초기화 (null값)
         ArrowArray = new GameObject[ArrowMaxPool];
+
+        animatorA = GetComponent<Animator>();            //애니메이터 만듬
+
     }
 
     void Update()
     {
-        // 매 프레임마다 화살발사 함수를 체크한다.
-        playerFire();
+
+        AttackAnimationUpdate();        // 공격 애니메이션 만든거 계속 체크
+        playerFire();                   // 매 프레임마다 화살발사 함수를 체크한다.
+
     }
 
     // 화살을 발사하는 함수
@@ -58,8 +67,6 @@ public class ArrowBody : MonoBehaviour
             {
                 // 코루틴 "FireCycleControl"이 실행되며
                 StartCoroutine(FireCycleControl());
-                // "Arrow"를 "ArrowLocation"의 위치에 "ArrowLocation"의 방향으로 복제한다.
-
                 //  화살풀에서 발사되지 않은 화살을 찾아서 발사합니다.
                 for (int i = 0; i < ArrowMaxPool; i++)
                 {
@@ -71,6 +78,8 @@ public class ArrowBody : MonoBehaviour
                         // 해당 화살의 위치를 화살 발사지점으로 맞춘다.
                         ArrowArray[i].transform.position = ArrowLocation.transform.position;
                         ArrowArray[i].GetComponent<ArrowMove>().dir = transform.right;
+                        //공격 애니메이션 끄는 타이밍
+                        animatorA.SetBool("isAttack", false);          
                         // 발사 후에 for문을 바로 빠져나간다.
                         break;
                     }
@@ -81,6 +90,7 @@ public class ArrowBody : MonoBehaviour
 
         // 화살이 발사될때마다 화살을 메모리풀로 돌려보내는 것을 체크한다.
         for (int i = 0; i < ArrowMaxPool; i++)
+
         {
             // 만약 화살[i]가 활성화 되어있다면
             if (ArrowArray[i])
@@ -107,6 +117,20 @@ public class ArrowBody : MonoBehaviour
             yield return new WaitForSeconds(FireDelay);
             // FireState를 true로 만든다.
             FireState = true;
+        }
+    }
+
+
+    void AttackAnimationUpdate()                //애니메이터 만든거 공격 버튼 누를 때 마다 불값 트루로 바뀜
+    {
+        if (Input.GetKey(KeyCode.A))
+        {
+            animatorA.SetBool("isAttack", true);
+        }
+
+        else
+        {
+            animatorA.SetBool("isAttack", false);
         }
     }
 }

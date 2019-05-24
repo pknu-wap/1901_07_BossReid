@@ -31,7 +31,7 @@ public class HeroMove : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>(); //컴포넌트를 불러옴
         animator = GetComponent<Animator>(); //애니메이터 불러오기 
         jumpCount = 0;
-        Fstate =new ArrowBody();       // 화살 쏘는 상태 초기화 new 아니라는 데 뭘 써야할 지 몰라서 일단 놔 뒀음 
+       //Fstate =GetComponent ArrowBody();       // 화살 쏘는 상태 초기화 new 아니라는 데 뭘 써야할 지 몰라서 일단 놔 뒀음 **************************
     }
 
     private void OnCollisionEnter(Collision col)
@@ -50,7 +50,7 @@ public class HeroMove : MonoBehaviour
             Debug.Log("스턴!");
             moveSpeed = 0f;
             jumpPower = 0f;
-            Fstate.FireState = false;               // 스턴 상태일 때 공격 안나가게 공격 불가 상태로 만듬
+           // Fstate.FireState = false;               // 스턴 상태일 때 공격 안나가게 공격 불가 상태로 만듬
             StartCoroutine(TimeStun());
         }
     }

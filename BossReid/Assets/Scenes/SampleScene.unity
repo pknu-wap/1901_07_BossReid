@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -168,8 +168,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.96, y: 1.04, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.96, y: 1.076242, z: 0.2}
+  m_Center: {x: 0, y: -0.018121004, z: 0}
 --- !u!114 &261588773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,6 +482,7 @@ MonoBehaviour:
   Arrow: {fileID: 5611937725460556969, guid: a205af89ff19e4c8fa7379747ece0314, type: 3}
   ArrowLocation: {fileID: 519939105}
   FireDelay: 0.001
+  FireState: 0
   arrowSpeed: 5
   ArrowMaxPool: 30
 --- !u!1 &677641632
