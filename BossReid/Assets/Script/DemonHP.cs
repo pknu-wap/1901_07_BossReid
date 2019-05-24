@@ -46,6 +46,7 @@ public class DemonHP : MonoBehaviour
         {
             HP = 0; //체력 음수로 가지말라고 초기화 해주는 거
             Live = false;
+            Debug.Log("보스 사망");     //보스 사망한지 일단 홛인 해 보는 거 
         }
     }
 }

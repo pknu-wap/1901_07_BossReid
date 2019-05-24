@@ -16,7 +16,7 @@ public class ArrowBody : MonoBehaviour
     private MemoryPool MPool;           //메모리 풀
     private GameObject[] ArrowArray;    //메모리 풀이랑 연동해서 사용할 화살 배열
 
-    Rigidbody rb;
+    //Rigidbody rb;
     Rigidbody arrowrb;
 
     Animator animatorA;              //여기도 똑같이 애니메이터 만듬 
@@ -118,6 +118,9 @@ public class ArrowBody : MonoBehaviour
             // FireState를 true로 만든다.
             FireState = true;
         }
+
+
+
     }
 
 
@@ -133,4 +136,6 @@ public class ArrowBody : MonoBehaviour
             animatorA.SetBool("isAttack", false);
         }
     }
+
+
 }

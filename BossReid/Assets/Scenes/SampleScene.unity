@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 461859584}
   m_Layer: 0
   m_Name: LeftEnd
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -495,9 +495,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Arrow: {fileID: 5611937725460556969, guid: a205af89ff19e4c8fa7379747ece0314, type: 3}
   ArrowLocation: {fileID: 519939105}
-  FireDelay: 0.4
+  FireDelay: 0.1
   FireState: 0
-  arrowSpeed: 5
+  arrowSpeed: 4
   ArrowMaxPool: 30
 --- !u!1 &677641632
 GameObject:
@@ -807,7 +807,7 @@ GameObject:
   - component: {fileID: 1356234556}
   m_Layer: 0
   m_Name: RightEnd
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
