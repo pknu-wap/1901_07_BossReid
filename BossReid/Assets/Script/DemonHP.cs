@@ -20,33 +20,32 @@ public class DemonHP : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        Debug.Log(HP);
+    }
     // Start is called before the first frame update
     void Start()
     {
         Init(); 
     }
-
+    
     IEnumerator StateCheck()
     {
         //if demon alive,
         while(Live)
         {
+            if(HP==0)
+            {
+            gameObject.SetActive(false);
+                Debug.Log("보스가 사망!");
+                Live = false;
+            }
             yield return null;
         }
         //죽는 애니메이션 있다면, 죽었을 때 다른 객체의 영향 안받게
         //콜라이더 제거하고 죽는 애니메이션 재생 하고 객체 비활성화
-        gameObject.SetActive(false);
-    }
 
-    private void InfoUpdate(float _Damage)
-    {
-        HP -= _Damage;
 
-        if (HP<=0)
-        {
-            HP = 0; //체력 음수로 가지말라고 초기화 해주는 거
-            Live = false;
-            Debug.Log("보스 사망");     //보스 사망한지 일단 홛인 해 보는 거 
-        }
     }
 }

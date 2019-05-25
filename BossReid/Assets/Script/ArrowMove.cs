@@ -28,6 +28,8 @@ public class ArrowMove : MonoBehaviour
         {
             Debug.Log("보스를 맞힘");
             GetComponent<Collider>().enabled = false;
+            DemonHP a= collision.gameObject.GetComponent<DemonHP>();
+            a.HP -= 1;
         }
         if(collision.CompareTag("Ground"))
         {
