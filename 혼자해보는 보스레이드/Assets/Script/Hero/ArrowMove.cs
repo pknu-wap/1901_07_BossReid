@@ -15,11 +15,6 @@ public class ArrowMove : MonoBehaviour
         transform.Translate(dir * MoveSpeed * Time.deltaTime);
     }
 
-   /* private void OnCollisionEnter(Collision collision)
-    {
-        //collision.gameObject.tag("")
-    }
-    */
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -38,6 +33,6 @@ public class ArrowMove : MonoBehaviour
         }
 
     }
-    //</Collider> 
+
 
 }

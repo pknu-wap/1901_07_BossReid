@@ -7,8 +7,7 @@ public class ArrowShot : MonoBehaviour
 
     void Update()
     {
-        //문제가 많은 코드,, 먼저 애드포스로 바꿔야 함 그리고 0일때는 캐릭터 방향 이전상태를 반환할 수 있어야 함 ***
-        
+
         // 캐릭터가 바라보는 방향이 왼쪽이면 
                 if (HeroMove.horizontalMove > 0)
               {

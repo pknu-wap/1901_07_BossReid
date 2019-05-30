@@ -10,7 +10,7 @@ public class HeroMove : MonoBehaviour
     //public float stunTime = 3f;
     public static bool stun;
 
-    Rigidbody rigidbody;
+    new Rigidbody rigidbody;
     Animator animator;
 
     bool isGrounded = false; 
@@ -31,7 +31,7 @@ public class HeroMove : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>(); //컴포넌트를 불러옴
         animator = GetComponent<Animator>(); //애니메이터 불러오기 
         jumpCount = 0;
-        Fstate =GetComponent <ArrowBody>();       // 화살 쏘는 상태 초기화 new 아니라는 데 뭘 써야할 지 몰라서 일단 놔 뒀음 **************************
+        Fstate =GetComponent <ArrowBody>();       // 화살 쏘는 상태 초기화
     }
 
     private void OnCollisionEnter(Collision col)

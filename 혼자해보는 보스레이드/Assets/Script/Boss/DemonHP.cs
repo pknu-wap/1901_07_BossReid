@@ -8,11 +8,14 @@ public class DemonHP : MonoBehaviour
     private float MAX_HP;  //demon's max hp
     private bool Live;       //is demon alive?
 
+    //Animator animatorE;
 
 
     void Init()
     {
-        MAX_HP=100;
+        //animatorE = gameObject.GetComponent<Animator>();
+
+        MAX_HP =100;
         HP = MAX_HP;
         Live = true;
 
@@ -37,9 +40,11 @@ public class DemonHP : MonoBehaviour
         {
             if(HP==0)
             {
-            gameObject.SetActive(false);
+                //animatorE.SetTrigger("isDemonDead");
+                gameObject.SetActive(false);
                 Debug.Log("보스가 사망!");
                 Live = false;
+          
             }
             yield return null;
         }
