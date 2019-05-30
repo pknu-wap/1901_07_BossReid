@@ -29,7 +29,7 @@ public class MonsterControl : MonoBehaviour
         switch (col.gameObject.tag)
         {
             case "Player": // 몬스터가 플레이어 태그와 닿을 경우
-                MonstersSpawnControl.spawnAllowed = false;
+                MonsterSpawnControl.spawnAllowed = false;
                 Instantiate(explosion, col.gameObject.transform.position, Quaternion.identity); // 플레이어 자리에 explosion 발생
                 Destroy(col.gameObject); // 플레이어 파괴
                 target = null; // 타겟 없음
