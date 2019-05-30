@@ -12,7 +12,7 @@ public class MonsterControl : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.Find("Hero"); // 히어로를 타겟으로
+        target = GameObject.Find("Player"); // 히어로를 타겟으로
         rb = GetComponent<Rigidbody>(); // rigidbody 불러옴
         moveSpeed = Random.Range(1f, 3f); // 몬스터 움직이는 속도
     }
