@@ -17,6 +17,8 @@ public class DemonAttack1 : MonoBehaviour
 
 
 
+
+
     // Animator animatorF;                    // 불 쏘는 애니메이션 만들려고 
     //8***8888****************
     private Quaternion Up = Quaternion.identity;
@@ -86,13 +88,13 @@ public class DemonAttack1 : MonoBehaviour
                         }
 
                         ////////////////////////////////////
-                            FireBallArray[i].GetComponent<FireBallMove>().dir = transform.right;             // X축 기준으로 발사
+                        FireBallArray[i].GetComponent<FireBallMove>().dir = transform.right;             // X축 기준으로 발사
                         break;                                                                           // 발사 후에 for문을 바로 빠져나감
                     }
                 }
             }
         }
-    
+
         for (int i = 0; i < FireBallMaxPool; i++)       // 파이어볼이 발사될때마다 파이어볼을 메모리풀로 돌려보내는 것을 체크
         {
             if (FireBallArray[i])   // 만약 파이어볼[i]가 활성화 되어있다면
@@ -114,17 +116,4 @@ public class DemonAttack1 : MonoBehaviour
             FireState = true;                            // FireState를 true로 만든다.
         }
     }
-
-   
-
-    /*
-구현해야 하는 것들
-1.내 위치 찾기
-2.메모리풀과 연동한 파이어볼 만들기
-3.히어로 위치찾기
-4.발사(언제 어떻게 발사?)
-5.테그확인을 통한 충돌처리   
-   */
-
-
 }
