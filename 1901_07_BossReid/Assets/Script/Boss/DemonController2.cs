@@ -15,8 +15,9 @@ public class DemonController2 : MonoBehaviour
     Animator animator;
     Vector3 movement;
     int movementFlag = 0; // 0 : Idle, 1 : Left, 2 : Right
-    bool isTracing;
+    bool isTracing = false;
     GameObject traceTarget;
+    private Quaternion Up = Quaternion.identity;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,11 @@ public class DemonController2 : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
 
         StartCoroutine("ChangeMovement");
+    }
+
+    void FixedUpdate()
+    {
+        Move();
     }
 
     IEnumerator ChangeMovement()
@@ -45,9 +51,32 @@ public class DemonController2 : MonoBehaviour
         StartCoroutine("ChangeMovement");
     }
 
-    void FixedUpdate()
+    IEnumerator TeleportTime()
     {
-        Move();
+        Vector3 player = traceTarget.transform.position;
+
+        if(isTracing == true)
+        {
+            transform.position =
+                Vector3.MoveTowards(transform.position, player, 1f);
+        }
+
+        yield return new WaitForSeconds(3f);
+
+        StartCoroutine(TeleportTime());
+    }
+
+    IEnumerator AttackTime()
+    {
+        animator.SetBool("isTracing", true);
+
+        yield return new WaitForSeconds(3f);
+
+        animator.SetBool("isTracing", false);
+
+        yield return new WaitForSeconds(3f);
+
+        StartCoroutine(AttackTime());
     }
 
     void Move() // 몬스터 움직임 정의
@@ -78,12 +107,14 @@ public class DemonController2 : MonoBehaviour
         if(dist == "Left") // 적이 플레이어보다 오른쪽에 있으면 왼쪽으로 가게 함
         {
             moveVelocity = Vector3.left;
-            transform.localScale = new Vector3(1, 1, 1);
+            Up.eulerAngles = new Vector3(0, 0, 0);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Up, 1);
         }
         else if(dist == "Right") // 적이 플레이어보다 왼쪽에 있으면 오른쪽으로 가게 함
         {
             moveVelocity = Vector3.right;
-            transform.localScale = new Vector3(-1, 1, 1);
+            Up.eulerAngles = new Vector3(0, 180, 0);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Up, 1);
         }
 
         transform.position += moveVelocity * movePower * Time.deltaTime;
@@ -116,6 +147,41 @@ public class DemonController2 : MonoBehaviour
             isTracing = false;
 
             StartCoroutine("ChangeMovement");
+        }
+    }
+
+    // Trace Start
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            traceTarget = other.gameObject;
+
+            StopCoroutine(ChangeMovement());
+            StartCoroutine(TeleportTime());
+            StartCoroutine(AttackTime());
+        }
+    }
+
+    // Trace Maintain
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            isTracing = true;
+        }
+    }
+
+    // Trace Over
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            isTracing = false;
+            animator.SetBool("isTracing", false);
+            StartCoroutine(ChangeMovement());
+            StopCoroutine(TeleportTime());
+            StopCoroutine(AttackTime());
         }
     }
 }
