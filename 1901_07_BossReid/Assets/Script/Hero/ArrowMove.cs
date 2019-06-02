@@ -11,7 +11,6 @@ public class ArrowMove : MonoBehaviour
 
     void Update()
     {
-
         transform.Translate(dir * MoveSpeed * Time.deltaTime);
     }
 
@@ -19,13 +18,34 @@ public class ArrowMove : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         // 부딛히는 collision을 가진 객체의 태그가 "Boss"일 경우
-        if (collision.CompareTag("Boss"))
+        if (collision.CompareTag("Boss3_Demon"))
         {
             Debug.Log("보스를 맞힘");
             GetComponent<Collider>().enabled = false;
-            DemonHP a= collision.gameObject.GetComponent<DemonHP>();
+            DemonHP a = collision.gameObject.GetComponent<DemonHP>();
             a.HP -= 1;
         }
+
+
+        /* 위자드 HP만들어지면 그때 활성화
+       if (collision.CompareTag("Boss2_Wizard"))
+       {
+           Debug.Log("보스를 맞힘");
+           GetComponent<Collider>().enabled = false;
+           WizardHP b= collision.gameObject.GetComponent<WizardHP>();
+           b.HP -= 1;
+       }
+       */
+
+        if (collision.CompareTag("Boss1_Slime"))
+        {
+            Debug.Log("보스를 맞힘");
+            GetComponent<Collider>().enabled = false;
+            SlimeHP c= collision.gameObject.GetComponent<SlimeHP>();
+            c.HP -= 1;
+        }
+
+
         if(collision.CompareTag("Ground"))
         {
             Debug.Log("벽 맞힘");
@@ -33,6 +53,4 @@ public class ArrowMove : MonoBehaviour
         }
 
     }
-
-
 }

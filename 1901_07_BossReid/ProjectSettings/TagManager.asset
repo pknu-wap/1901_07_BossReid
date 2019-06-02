@@ -8,6 +8,9 @@ TagManager:
   - Ball
   - Boss
   - Arrow
+  - Boss1_Slime
+  - Boss2_Wizard
+  - Boss3_Demon
   layers:
   - Default
   - TransparentFX

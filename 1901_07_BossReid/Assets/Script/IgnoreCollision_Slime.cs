@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IgnoreCollision : MonoBehaviour
+public class IgnoreCollision_Slime : MonoBehaviour
 {
     public GameObject Hero;
-    public GameObject Demon;
+    public GameObject Slime;
 
     // Start is called before the first frame update
     void Start()
     {
-        Physics.IgnoreCollision(Hero.GetComponent<Collider>(), Demon.GetComponent<Collider>());
+        Physics.IgnoreCollision(Hero.GetComponent<Collider>(), Slime.GetComponent<Collider>());
     }
 }
