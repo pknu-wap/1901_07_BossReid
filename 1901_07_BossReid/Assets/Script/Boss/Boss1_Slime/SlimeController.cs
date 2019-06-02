@@ -51,32 +51,65 @@ public class SlimeController : MonoBehaviour
         StartCoroutine("ChangeMovement");
     }
 
-    IEnumerator TeleportTime()
+    //IEnumerator TeleportTime()
+    //{
+    //    Vector3 player = traceTarget.transform.position;
+
+    //    if (isTracing == true)
+    //    {
+    //        transform.position =
+    //            Vector3.MoveTowards(transform.position, player, 1f);
+    //    }
+
+    //    yield return new WaitForSeconds(3f);
+
+    //    StartCoroutine(TeleportTime());
+    //}
+
+    //IEnumerator AttackTime()
+    //{
+    //    animator.SetBool("isTracing", true);
+
+    //    yield return new WaitForSeconds(3f);
+
+    //    animator.SetBool("isTracing", false);
+
+    //    yield return new WaitForSeconds(3f);
+
+    //    StartCoroutine(AttackTime());
+    //}
+
+    // Trace Start
+    void OnTriggerEnter(Collider other)
     {
-        Vector3 player = traceTarget.transform.position;
-
-        if (isTracing == true)
+        if (other.gameObject.tag == "Player")
         {
-            transform.position =
-                Vector3.MoveTowards(transform.position, player, 1f);
+            traceTarget = other.gameObject;
+
+            animator.SetBool("isTracing", true);
+
+            StopCoroutine(ChangeMovement());
         }
-
-        yield return new WaitForSeconds(3f);
-
-        StartCoroutine(TeleportTime());
     }
 
-    IEnumerator AttackTime()
+    // Trace Maintain
+    void OnTriggerStay(Collider other)
     {
-        animator.SetBool("isTracing", true);
+        if (other.gameObject.tag == "Player")
+        {
+            isTracing = true;
+        }
+    }
 
-        yield return new WaitForSeconds(3f);
-
-        animator.SetBool("isTracing", false);
-
-        yield return new WaitForSeconds(3f);
-
-        StartCoroutine(AttackTime());
+    // Trace Over
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            isTracing = false;
+            animator.SetBool("isTracing", false);
+            StartCoroutine(ChangeMovement());
+        }
     }
 
     void Move() // 몬스터 움직임 정의
@@ -120,68 +153,35 @@ public class SlimeController : MonoBehaviour
         transform.position += moveVelocity * movePower * Time.deltaTime;
     }
 
-    void OnTriggerEnter2D(Collider2D other) // 인식 범위 내에 들어왔을 때
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            traceTarget = other.gameObject;
+    //void OnTriggerEnter2D(Collider2D other) // 인식 범위 내에 들어왔을 때
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        traceTarget = other.gameObject;
 
-            StopCoroutine("ChangeMovement");
-        }
-    }
+    //        StopCoroutine("ChangeMovement");
+    //    }
+    //}
 
-    void OnTriggerStay2D(Collider2D other) // 인식 범위 내에 있을 때
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            isTracing = true;
+    //void OnTriggerStay2D(Collider2D other) // 인식 범위 내에 있을 때
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        isTracing = true;
 
-            animator.SetBool("isWalking", true);
-        }
-    }
+    //        animator.SetBool("isWalking", true);
+    //    }
+    //}
 
-    void OnTriggerExit2D(Collider2D other) // 인식 범위 밖으로 나갈 때
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            isTracing = false;
+    //void OnTriggerExit2D(Collider2D other) // 인식 범위 밖으로 나갈 때
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        isTracing = false;
 
-            StartCoroutine("ChangeMovement");
-        }
-    }
+    //        StartCoroutine("ChangeMovement");
+    //    }
+    //}
 
-    // Trace Start
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            traceTarget = other.gameObject;
-
-            StopCoroutine(ChangeMovement());
-            StartCoroutine(TeleportTime());
-            StartCoroutine(AttackTime());
-        }
-    }
-
-    // Trace Maintain
-    void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            isTracing = true;
-        }
-    }
-
-    // Trace Over
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            isTracing = false;
-            animator.SetBool("isTracing", false);
-            StartCoroutine(ChangeMovement());
-            StopCoroutine(TeleportTime());
-            StopCoroutine(AttackTime());
-        }
-    }
+    
 }
