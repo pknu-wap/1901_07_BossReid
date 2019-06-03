@@ -76,7 +76,7 @@ public class SlimeAttack1 : MonoBehaviour
 
                         // FireBallArray[i].transform.rotation = 
                         //////////////////////////////////// 아래 코드 가지고 불 회전하는 거 만들려고 했는데 못ㅗㅗ;;
-
+                        /*
                         if (Input.GetKey(KeyCode.RightArrow))
                         {
                             if (transform.rotation.eulerAngles.y != 0)
@@ -86,7 +86,7 @@ public class SlimeAttack1 : MonoBehaviour
                             }
                             //transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
                         }
-
+                        */
                         ////////////////////////////////////
                         FireBallArray[i].GetComponent<GreenBallMove>().dir = transform.right;             // X축 기준으로 발사
                         break;                                                                           // 발사 후에 for문을 바로 빠져나감

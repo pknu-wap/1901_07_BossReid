@@ -147,9 +147,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1280
-        width: 1280
-        height: 1280
+        y: 80
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,7 +157,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fdb5b0577aef4b1b8248d3530b80bd2
+      spriteID: 65700139b23e042ae9a26f9d35775f75
       internalID: 1411718729462627031
       vertices: []
       indices: 
@@ -167,10 +167,10 @@ TextureImporter:
       name: wizard attack_1
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1280
-        width: 1280
-        height: 1280
+        x: 80
+        y: 80
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,7 +178,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90503b1479f964128b8cfd4842af299a
+      spriteID: 175e7af6ae7b54bb78a71dbb845919b8
       internalID: 3933499714294820406
       vertices: []
       indices: 
@@ -188,10 +188,10 @@ TextureImporter:
       name: wizard attack_2
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 1280
-        width: 1280
-        height: 1280
+        x: 160
+        y: 80
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,7 +199,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 930dbcd4d2acc467ca5d15ec7ca81165
+      spriteID: 44b08847fd566453d9ae74d17ebee215
       internalID: -1634756234499489522
       vertices: []
       indices: 
@@ -209,10 +209,10 @@ TextureImporter:
       name: wizard attack_3
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 1280
-        width: 1280
-        height: 1280
+        x: 242
+        y: 80
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,7 +220,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8541b6b558fb8444f806911b438cdc73
+      spriteID: b0a15bbef4a8046319f0d51c434c3f65
       internalID: -8201188565566148735
       vertices: []
       indices: 
@@ -230,10 +230,10 @@ TextureImporter:
       name: wizard attack_4
       rect:
         serializedVersion: 2
-        x: 5120
-        y: 1280
-        width: 1280
-        height: 1280
+        x: 320
+        y: 80
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,7 +241,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b106de377258741028c2b0eae6d6acc3
+      spriteID: 70deb1d9f01244f7e9391f38fb607a3f
       internalID: 3924587004258133671
       vertices: []
       indices: 
@@ -251,10 +251,10 @@ TextureImporter:
       name: wizard attack_5
       rect:
         serializedVersion: 2
-        x: 6400
-        y: 1280
-        width: 1280
-        height: 1280
+        x: 400
+        y: 80
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,7 +262,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00a3e1bc7240a4452a320d8fd83b0685
+      spriteID: 4ceb1e63f204c48528cf0a194eabff58
       internalID: 3687349637515484808
       vertices: []
       indices: 
@@ -272,10 +272,10 @@ TextureImporter:
       name: wizard attack_6
       rect:
         serializedVersion: 2
-        x: 7680
-        y: 1280
-        width: 1280
-        height: 1280
+        x: 480
+        y: 80
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,7 +283,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24acfcde3fd884527952ebca89593dcf
+      spriteID: 3865d8f4045534ff1a6dcbad2b08f897
       internalID: 6215951376254583049
       vertices: []
       indices: 
@@ -293,10 +293,10 @@ TextureImporter:
       name: wizard attack_7
       rect:
         serializedVersion: 2
-        x: 8960
-        y: 1280
-        width: 1280
-        height: 1280
+        x: 560
+        y: 80
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,7 +304,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5caa9e2e994a4076a67d23fd462a00e
+      spriteID: 03eb0038e2b89441685f6478993901a1
       internalID: -8860941670812879454
       vertices: []
       indices: 
@@ -316,8 +316,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1280
-        height: 1280
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,7 +325,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 077bab7920940413b86ec7ecded7175b
+      spriteID: 75bde1707d013486180f7039df6ca540
       internalID: -7632629494655975057
       vertices: []
       indices: 
@@ -335,10 +335,10 @@ TextureImporter:
       name: wizard attack_9
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 80
         y: 0
-        width: 1280
-        height: 1280
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,7 +346,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efc35c8a236c84116a8db053a8926d3d
+      spriteID: 9b623e2fb8e664f60993e520ffe12a6d
       internalID: -4910071847443526791
       vertices: []
       indices: 
@@ -356,10 +356,10 @@ TextureImporter:
       name: wizard attack_10
       rect:
         serializedVersion: 2
-        x: 2560
+        x: 160
         y: 0
-        width: 1280
-        height: 1280
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -367,7 +367,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 363acd7e7324343c78450559fb864e98
+      spriteID: 986206204020e4aae8fd3b099cedb08a
       internalID: -7176615878947278896
       vertices: []
       indices: 
@@ -377,10 +377,10 @@ TextureImporter:
       name: wizard attack_11
       rect:
         serializedVersion: 2
-        x: 3840
+        x: 240
         y: 0
-        width: 1280
-        height: 1280
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -388,7 +388,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c79f612b7a580480ba81642d24f4ff5d
+      spriteID: 566ad067dd2574c76a204d52d643e859
       internalID: -2711782188375339434
       vertices: []
       indices: 
@@ -398,10 +398,10 @@ TextureImporter:
       name: wizard attack_12
       rect:
         serializedVersion: 2
-        x: 5120
+        x: 320
         y: 0
-        width: 1280
-        height: 1280
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -409,7 +409,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 033f07c9a2c864a09855b2d76f499c60
+      spriteID: 900ff12458cd74824a52452b982f4959
       internalID: -8634622765834890560
       vertices: []
       indices: 
@@ -419,10 +419,10 @@ TextureImporter:
       name: wizard attack_13
       rect:
         serializedVersion: 2
-        x: 6400
+        x: 400
         y: 0
-        width: 1280
-        height: 1280
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -430,7 +430,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5801b7f60a204e9ba33785de242bd01
+      spriteID: a09e0a402cfd348fb91fb2c0ec9c34a9
       internalID: -8533548000235705288
       vertices: []
       indices: 
@@ -440,10 +440,10 @@ TextureImporter:
       name: wizard attack_14
       rect:
         serializedVersion: 2
-        x: 7680
+        x: 480
         y: 0
-        width: 1280
-        height: 1280
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -451,7 +451,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d7a264640b11485a87d583119524d11
+      spriteID: 41ce4b03dd38c45209e2ef3a71389dc0
       internalID: -4777261997857355116
       vertices: []
       indices: 
@@ -461,10 +461,10 @@ TextureImporter:
       name: wizard attack_15
       rect:
         serializedVersion: 2
-        x: 8960
+        x: 560
         y: 0
-        width: 1280
-        height: 1280
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -472,7 +472,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57d047a3fec844eaca061f5c6dc3bb60
+      spriteID: 17bb7137eb48a4da9b9f5b9ebe82b243
       internalID: -2489031139427162358
       vertices: []
       indices: 
@@ -481,7 +481,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a8dfd0c548327470f91026c20c29e288
+    spriteID: e48c99efb015e46e4b641470587912fc
     internalID: 0
     vertices: []
     indices: 

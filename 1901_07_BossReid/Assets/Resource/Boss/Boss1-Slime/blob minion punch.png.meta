@@ -127,13 +127,13 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e58ace83f86574838be4427eb43f8d09
+      spriteID: 2ba6521c778ce40a28458daa9203d580
       internalID: 8919052966295577230
       vertices: []
       indices: 
@@ -148,13 +148,13 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a21ca9b96786743789f1a2c842c28704
+      spriteID: bcd401636e8644dd6b2a05ab5d9008ae
       internalID: -7460624394592875845
       vertices: []
       indices: 
@@ -169,13 +169,13 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58de71ff7e1204a69b37e1e6f51aa8c1
+      spriteID: 3d3650da8e50f4ca88e9016362e8a0f5
       internalID: -4586907271285055381
       vertices: []
       indices: 
@@ -190,13 +190,13 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c0771afd8cb5452882a6373a982fca2
+      spriteID: 7f0b99e9a8ef449959a5de6439ff67b8
       internalID: -4450755878208615931
       vertices: []
       indices: 
@@ -206,18 +206,18 @@ TextureImporter:
       name: blob minion punch_4
       rect:
         serializedVersion: 2
-        x: 320
+        x: 316
         y: 0
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5495c661094f14115b10ea988fc95e00
+      spriteID: 5361979dd996d4674946765299f8ef82
       internalID: -658001118339097518
       vertices: []
       indices: 
@@ -232,13 +232,13 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d48fa290fac624db48761a236005e896
+      spriteID: ad308e0a68cf041eaad151751fe9f221
       internalID: -6465300185806058976
       vertices: []
       indices: 
@@ -248,18 +248,18 @@ TextureImporter:
       name: blob minion punch_6
       rect:
         serializedVersion: 2
-        x: 480
+        x: 478
         y: 0
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63bf54de4de854c5593392c776d899e5
+      spriteID: 203bd3e4ca34e4a35aebda1b7f313235
       internalID: -4583077420410509346
       vertices: []
       indices: 
@@ -274,13 +274,13 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84955375c1edb442e8eb2b67aef82f70
+      spriteID: f7546680372e74b6bb2e07acfbc4b48f
       internalID: -60673095723009927
       vertices: []
       indices: 
@@ -289,7 +289,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6e92b0d6a0c024a879b9b1ba0e30337a
+    spriteID: 97abdb90e4337482196674fcd22db185
     internalID: 0
     vertices: []
     indices: 
