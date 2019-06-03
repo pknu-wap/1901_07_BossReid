@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 261588772}
   m_Layer: 0
   m_Name: Demon
-  m_TagString: Boss
+  m_TagString: Boss3_Demon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -310,7 +310,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261588770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0.526, z: 0}
+  m_LocalPosition: {x: 1.5, y: 0.554, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 337241421}
@@ -372,10 +372,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.79
-  m_Height: 1.24
+  m_Radius: 0.68130565
+  m_Height: 1.4523599
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.063820064, z: 0.108694375}
 --- !u!1 &337241420
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +799,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1.837e-42, y: 1.05e-43, z: 4.5915e-41, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

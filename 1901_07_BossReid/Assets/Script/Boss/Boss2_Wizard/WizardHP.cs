@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlimeHP : MonoBehaviour
+public class WizardHP : MonoBehaviour
 {
     public float HP;    //Slime's HP
     private float MAX_HP;  //Slime's max hp

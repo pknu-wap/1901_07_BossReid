@@ -27,7 +27,7 @@ public class ArrowMove : MonoBehaviour
         }
 
 
-        /* 위자드 HP만들어지면 그때 활성화
+      
        if (collision.CompareTag("Boss2_Wizard"))
        {
            Debug.Log("보스를 맞힘");
@@ -35,11 +35,11 @@ public class ArrowMove : MonoBehaviour
            WizardHP b= collision.gameObject.GetComponent<WizardHP>();
            b.HP -= 1;
        }
-       */
+    
 
         if (collision.CompareTag("Boss1_Slime"))
         {
-            Debug.Log("보스를 맞힘");
+            Debug.Log("1번 보스를 맞힘");
             GetComponent<Collider>().enabled = false;
             SlimeHP c= collision.gameObject.GetComponent<SlimeHP>();
             c.HP -= 1;

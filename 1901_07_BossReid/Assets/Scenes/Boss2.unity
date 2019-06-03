@@ -179,11 +179,11 @@ GameObject:
   - component: {fileID: 112602044}
   - component: {fileID: 112602043}
   - component: {fileID: 112602046}
-  - component: {fileID: 112602048}
   - component: {fileID: 112602047}
+  - component: {fileID: 112602048}
   m_Layer: 0
   m_Name: Wizard
-  m_TagString: Untagged
+  m_TagString: Boss2_Wizard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 112602040}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd44d2c0d70ff468cbce5e67eaccc21f, type: 3}
+  m_Script: {fileID: 11500000, guid: f147f63bd1dd54a61b3351d9cd15ae61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
