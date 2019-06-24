@@ -9,6 +9,7 @@ public class MonsterControl : MonoBehaviour
     float moveSpeed;
     Vector3 directionToTarget;
     public GameObject explosion;
+    public GameObject playerExplosion;
 
     void Start()
     {
@@ -30,7 +31,7 @@ public class MonsterControl : MonoBehaviour
         {
             case "Player": // 몬스터가 플레이어 태그와 닿을 경우
                 MonsterSpawnControl.spawnAllowed = false;
-                Instantiate(explosion, col.gameObject.transform.position, Quaternion.identity); // 플레이어 자리에 explosion 발생
+                Instantiate(playerExplosion, col.gameObject.transform.position, Quaternion.identity); // 플레이어 자리에 explosion 발생
                 Destroy(col.gameObject); // 플레이어 파괴
                 target = null; // 타겟 없음
                 break;

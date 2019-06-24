@@ -330,6 +330,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 100
+  Explosion: {fileID: 5567796737816513724, guid: 4a9b0900bdd6b4f12b013b6eaca89e3a,
+    type: 3}
 --- !u!114 &261588778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,7 +801,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.837e-42, y: 1.05e-43, z: 4.5915e-41, w: 0}
+  m_BoundingSphereOverride: {x: 9.596064e+11, y: 1.8464882e+25, z: 7.138753e+31, w: 1.5583171e+28}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

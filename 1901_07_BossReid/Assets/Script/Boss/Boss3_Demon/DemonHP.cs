@@ -7,6 +7,7 @@ public class DemonHP : MonoBehaviour
     public float HP;    //demon's HP
     private float MAX_HP;  //demon's max hp
     private bool Live;       //is demon alive?
+    public GameObject Explosion;
 
     //Animator animatorE;
 
