@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SlimeHP : MonoBehaviour
 {
-    public float HP;    //Slime's HP
-    private float MAX_HP;  //Slime's max hp
-    private bool Live;       //is Slime alive?
+    public float HP;    //demon's HP
+    private float MAX_HP;  //demon's max hp
+    private bool Live;       //is demon alive?
+    public GameObject Explosion;
+
+    public Slider hpSlider;
 
     //Animator animatorE;
 
@@ -15,7 +19,7 @@ public class SlimeHP : MonoBehaviour
     {
         //animatorE = gameObject.GetComponent<Animator>();
 
-        MAX_HP =100;
+        MAX_HP = 100;
         HP = MAX_HP;
         Live = true;
 
@@ -26,25 +30,28 @@ public class SlimeHP : MonoBehaviour
     private void Update()
     {
         Debug.Log(HP);
+
+        hpSlider.maxValue = MAX_HP;
+        hpSlider.value = HP;
     }
     // Start is called before the first frame update
     void Start()
     {
-        Init(); 
+        Init();
     }
-    
+
     IEnumerator StateCheck()
     {
-        //if Slime alive,
+        //if demon alive,
         while (Live)
         {
-            if(HP==0)
+            if (HP == 0)
             {
                 //animatorE.SetTrigger("isDemonDead");
                 gameObject.SetActive(false);
                 Debug.Log("보스가 사망!");
                 Live = false;
-          
+
             }
             yield return null;
         }

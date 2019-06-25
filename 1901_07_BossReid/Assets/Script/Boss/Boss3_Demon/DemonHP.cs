@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DemonHP : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class DemonHP : MonoBehaviour
     private float MAX_HP;  //demon's max hp
     private bool Live;       //is demon alive?
     public GameObject Explosion;
+
+    public Slider hpSlider;
 
     //Animator animatorE;
 
@@ -27,6 +30,9 @@ public class DemonHP : MonoBehaviour
     private void Update()
     {
         Debug.Log(HP);
+
+        hpSlider.maxValue = MAX_HP;
+        hpSlider.value = HP;
     }
     // Start is called before the first frame update
     void Start()
