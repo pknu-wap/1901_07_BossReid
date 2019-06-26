@@ -14,9 +14,8 @@ public class DemonAttack1 : MonoBehaviour
     private MemoryPool FireBallMPool;      // 메모리 풀
     private GameObject[] FireBallArray;    // 메모리 풀이랑 연동해서 사용할 파이어볼 배열
 
-    public DemonController2 dc2;
-
-    //DemonController2 DemonMovementState = collision.gameObject.GetComponent<DemonController2>();
+    // public DemonController2 dc2;
+    public GameObject Boss;                //각도 알아내려고 불러옴
 
     private void OnApplicationQuit()
     {
@@ -31,7 +30,6 @@ public class DemonAttack1 : MonoBehaviour
         FireBallArray = new GameObject[FireBallMaxPool];      // 배열을 초기화 해 줌
     }
 
-    // Update is called once per frame
     void Update()
     {
         BossFire();                     // 매 프레임마다 파이어볼 발사 함수를 체크한다.
@@ -58,10 +56,22 @@ public class DemonAttack1 : MonoBehaviour
                   renderer.filpx = true;
                   else if(플래그가 오른쪽이거나 디스트가 라이트)
                   renderer.filpx = false;
-                    */
+                  dc2.dist = "Left"; // 이거 사용하면됨.
+                  dc2.movementFlag = 0; // 이것도 사용하면됨.
+                    -------------
+                    데몬의 y로테이션 값이 180일때 오른쪽을 봄
+                    컴포넌로 로테이션 값을 불러와서 이프문에 넣는걸로
 
-                    dc2.dist = "Left"; // 이거 사용하면됨.
-                    dc2.movementFlag = 0; // 이것도 사용하면됨.
+                    if ((dc2.dist == "Left") || (dc2.movementFlag == 1))
+                        transform.localScale = new Vector3(-1, 1, 1);
+
+                    else if ((dc2.dist == "Right") || (dc2.movementFlag == 2))
+                        transform.localScale = new Vector3(1, 1, 1);
+
+                    GetComponent.trasnform.eularAngles
+                    */
+                  
+
 
                     break;                                                                           // 발사 후에 for문을 바로 빠져나감
                 }
