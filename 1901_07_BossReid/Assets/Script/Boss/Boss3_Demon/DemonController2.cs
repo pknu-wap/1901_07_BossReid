@@ -12,9 +12,10 @@ using UnityEngine.AI;
 public class DemonController2 : MonoBehaviour
 {
     public float movePower = 1f;
+    public string dist; 
     Animator animator;
     Vector3 movement;
-    int movementFlag = 0; // 0 : Idle, 1 : Left, 2 : Right
+    public int movementFlag = 0; // 0 : Idle, 1 : Left, 2 : Right
     bool isTracing = false;
     GameObject traceTarget;
     private Quaternion Up = Quaternion.identity;
@@ -82,7 +83,7 @@ public class DemonController2 : MonoBehaviour
     void Move() // 몬스터 움직임 정의
     {
         Vector3 moveVelocity = Vector3.zero;
-        string dist = "";
+        dist = "";
 
         if (isTracing) // 추적 중이라면 dist에 따라 움직임
         {

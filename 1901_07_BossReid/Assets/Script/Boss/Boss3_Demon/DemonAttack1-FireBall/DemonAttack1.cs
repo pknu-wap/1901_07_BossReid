@@ -14,6 +14,8 @@ public class DemonAttack1 : MonoBehaviour
     private MemoryPool FireBallMPool;      // 메모리 풀
     private GameObject[] FireBallArray;    // 메모리 풀이랑 연동해서 사용할 파이어볼 배열
 
+    public DemonController2 dc2;
+
     //DemonController2 DemonMovementState = collision.gameObject.GetComponent<DemonController2>();
 
     private void OnApplicationQuit()
@@ -58,6 +60,8 @@ public class DemonAttack1 : MonoBehaviour
                   renderer.filpx = false;
                     */
 
+                    dc2.dist = "Left"; // 이거 사용하면됨.
+                    dc2.movementFlag = 0; // 이것도 사용하면됨.
 
                     break;                                                                           // 발사 후에 for문을 바로 빠져나감
                 }
