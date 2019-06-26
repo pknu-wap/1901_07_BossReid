@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DemonAttack1 : MonoBehaviour
+public class WizardAttack1 : MonoBehaviour
 {
 
     public GameObject BossFireBall;        // 복제할 파이어볼 오브젝트
@@ -13,9 +13,6 @@ public class DemonAttack1 : MonoBehaviour
     public int FireBallMaxPool;            // 메모리 풀에 저장할 파이어볼 개수
     private MemoryPool FireBallMPool;      // 메모리 풀
     private GameObject[] FireBallArray;    // 메모리 풀이랑 연동해서 사용할 파이어볼 배열
-
-    // public DemonController2 dc2;
-   // public GameObject Boss;                //각도 알아내려고 불러옴
 
     private void OnApplicationQuit()
     {
@@ -49,30 +46,6 @@ public class DemonAttack1 : MonoBehaviour
                     FireBallArray[i] = FireBallMPool.NewItem();                                      // 메모리풀에서 파이어볼을 가져옴
                     FireBallArray[i].transform.position = FireBallLocation.transform.position;       // 해당 파이어볼의 위치를 파이어볼 발사지점으로 맞춤
                     FireBallArray[i].GetComponent<FireBallMove>().dir = transform.right;             // X축 기준으로 발사
-
-                    /*
-                  if문 써서 보스 플래그기 왼쪽인지 오른쪽인지 보고 불꽃 방향 바꾸는 라인 추가
-                  if(플래그가 왼쪽이거나 디스트가 레프트)
-                  renderer.filpx = true;
-                  else if(플래그가 오른쪽이거나 디스트가 라이트)
-                  renderer.filpx = false;
-                  dc2.dist = "Left"; // 이거 사용하면됨.
-                  dc2.movementFlag = 0; // 이것도 사용하면됨.
-                    -------------
-                    데몬의 y로테이션 값이 180일때 오른쪽을 봄
-                    컴포넌로 로테이션 값을 불러와서 이프문에 넣는걸로
-
-                    if ((dc2.dist == "Left") || (dc2.movementFlag == 1))
-                        transform.localScale = new Vector3(-1, 1, 1);
-
-                    else if ((dc2.dist == "Right") || (dc2.movementFlag == 2))
-                        transform.localScale = new Vector3(1, 1, 1);
-
-                    GetComponent.trasnform.eularAngles
-                    */
-                  
-
-
                     break;                                                                           // 발사 후에 for문을 바로 빠져나감
                 }
             }

@@ -414,6 +414,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233361311}
   m_CullTransparentMesh: 0
+--- !u!1 &461125376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 461125377}
+  - component: {fileID: 461125378}
+  - component: {fileID: 461125379}
+  m_Layer: 0
+  m_Name: GreenFist
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &461125377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461125376}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.86, y: -0.19, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_Children: []
+  m_Father: {fileID: 479630276}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &461125378
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461125376}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.05371517
+  m_Height: 0.2007873
+  m_Direction: 0
+  m_Center: {x: -0.20920205, y: -0.008815646, z: -0.0042743087}
+--- !u!114 &461125379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461125376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ecc942e1f181415fa0ffbc9140d7bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: {fileID: 0}
+  Deadmotion: {fileID: 5567796737816513724, guid: 4a9b0900bdd6b4f12b013b6eaca89e3a,
+    type: 3}
 --- !u!1 &479630275
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +502,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.086, y: 0.019, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_Children: []
+  m_Children:
+  - {fileID: 461125377}
   m_Father: {fileID: 2032971175}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -456,9 +518,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1.6671392
-  m_Height: 26.040752
+  m_Height: 59.35782
   m_Direction: 0
-  m_Center: {x: 0.46032548, y: -0.086622834, z: -0.101174116}
+  m_Center: {x: 0.50646067, y: -0.086622834, z: -0.101174116}
 --- !u!1001 &831947295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1558,7 +1620,6 @@ GameObject:
   - component: {fileID: 2032971169}
   - component: {fileID: 2032971168}
   - component: {fileID: 2032971171}
-  - component: {fileID: 2032971167}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Boss1_Slime
@@ -1566,20 +1627,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &2032971167
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2032971166}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  m_Radius: 0.3234085
-  m_Height: 2.1144614
-  m_Direction: 0
-  m_Center: {x: -0.049837828, y: 0.14763057, z: 0}
 --- !u!114 &2032971168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1629,7 +1676,6 @@ MonoBehaviour:
   FireBallLocation: {fileID: 479630276}
   FireDelay: 1
   FireState: 0
-  arrowSpeed: 1
   FireBallMaxPool: 4
 --- !u!136 &2032971171
 CapsuleCollider:
@@ -1658,6 +1704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePower: 1
+  isTracing: 0
 --- !u!95 &2032971173
 Animator:
   serializedVersion: 3

@@ -15,7 +15,7 @@ public class SlimeController : MonoBehaviour
     Animator animator;
     Vector3 movement;
     int movementFlag = 0; // 0 : Idle, 1 : Left, 2 : Right
-    bool isTracing = false;
+    public bool isTracing = false;
     GameObject traceTarget;
     private Quaternion Up = Quaternion.identity;
 
@@ -51,33 +51,6 @@ public class SlimeController : MonoBehaviour
         StartCoroutine("ChangeMovement");
     }
 
-    //IEnumerator TeleportTime()
-    //{
-    //    Vector3 player = traceTarget.transform.position;
-
-    //    if (isTracing == true)
-    //    {
-    //        transform.position =
-    //            Vector3.MoveTowards(transform.position, player, 1f);
-    //    }
-
-    //    yield return new WaitForSeconds(3f);
-
-    //    StartCoroutine(TeleportTime());
-    //}
-
-    //IEnumerator AttackTime()
-    //{
-    //    animator.SetBool("isTracing", true);
-
-    //    yield return new WaitForSeconds(3f);
-
-    //    animator.SetBool("isTracing", false);
-
-    //    yield return new WaitForSeconds(3f);
-
-    //    StartCoroutine(AttackTime());
-    //}
 
     // Trace Start
     void OnTriggerEnter(Collider other)
@@ -152,36 +125,5 @@ public class SlimeController : MonoBehaviour
 
         transform.position += moveVelocity * movePower * Time.deltaTime;
     }
-
-    //void OnTriggerEnter2D(Collider2D other) // 인식 범위 내에 들어왔을 때
-    //{
-    //    if (other.gameObject.tag == "Player")
-    //    {
-    //        traceTarget = other.gameObject;
-
-    //        StopCoroutine("ChangeMovement");
-    //    }
-    //}
-
-    //void OnTriggerStay2D(Collider2D other) // 인식 범위 내에 있을 때
-    //{
-    //    if (other.gameObject.tag == "Player")
-    //    {
-    //        isTracing = true;
-
-    //        animator.SetBool("isWalking", true);
-    //    }
-    //}
-
-    //void OnTriggerExit2D(Collider2D other) // 인식 범위 밖으로 나갈 때
-    //{
-    //    if (other.gameObject.tag == "Player")
-    //    {
-    //        isTracing = false;
-
-    //        StartCoroutine("ChangeMovement");
-    //    }
-    //}
-
     
 }

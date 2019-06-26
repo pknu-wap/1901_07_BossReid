@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 112602041}
   - component: {fileID: 112602045}
   - component: {fileID: 112602044}
+  - component: {fileID: 112602043}
   - component: {fileID: 112602046}
   - component: {fileID: 112602047}
   - component: {fileID: 112602048}
@@ -251,6 +252,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &112602043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112602040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adfc3853bb34a4c2e9d3b183162256b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BossFireBall: {fileID: 8423132737204238989, guid: 42dd2aabef3b74d14af60cc478dbff3f,
+    type: 3}
+  FireBallLocation: {fileID: 493820786}
+  FireDelay: 1
+  FireState: 0
+  FireBallMaxPool: 20
 --- !u!65 &112602044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -262,8 +281,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.41442478, y: 0.76075214, z: 0.2}
+  m_Center: {x: -0.018187582, y: 0.039293826, z: 0}
 --- !u!95 &112602045
 Animator:
   serializedVersion: 3
@@ -311,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f147f63bd1dd54a61b3351d9cd15ae61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
+  HP: 100
   Deadmotion: {fileID: 5567796737816513724, guid: 4a9b0900bdd6b4f12b013b6eaca89e3a,
     type: 3}
   hpSlider: {fileID: 2130022950}
@@ -328,6 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePower: 1
+  isTracing: 0
 --- !u!1 &318781533
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +474,7 @@ GameObject:
   - component: {fileID: 493820786}
   - component: {fileID: 493820787}
   m_Layer: 0
-  m_Name: GreenBallLocation
+  m_Name: WizardCheckLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -468,8 +488,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493820785}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.40488517, y: -0.008000001, z: -0.07525253}
-  m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 0.099999994}
+  m_LocalPosition: {x: -0.40488517, y: 0.051, z: -0.07525253}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 112602042}
   m_RootOrder: 0
@@ -485,9 +505,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1.6671392
-  m_Height: 31.033314
+  m_Height: 61.994797
   m_Direction: 0
-  m_Center: {x: 2.9565694, y: -0.08662284, z: -0.10117412}
+  m_Center: {x: 3.9186578, y: -0.08662284, z: -0.10117412}
 --- !u!1 &733950228
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +904,7 @@ GameObject:
   - component: {fileID: 900256423}
   - component: {fileID: 900256422}
   - component: {fileID: 900256421}
+  - component: {fileID: 900256425}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -972,6 +993,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &900256425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900256420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adfc3853bb34a4c2e9d3b183162256b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BossFireBall: {fileID: 0}
+  FireBallLocation: {fileID: 0}
+  FireDelay: 0
+  FireState: 0
+  FireBallMaxPool: 0
 --- !u!1 &917250092
 GameObject:
   m_ObjectHideFlags: 0

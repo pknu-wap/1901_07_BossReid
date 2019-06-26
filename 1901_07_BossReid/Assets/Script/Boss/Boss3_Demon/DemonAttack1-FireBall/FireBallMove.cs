@@ -7,6 +7,7 @@ public class FireBallMove : MonoBehaviour
 
     public float MoveSpeed;
     public Vector3 dir;
+    public GameObject Deadmotion;
 
     void Update()
     {
@@ -17,6 +18,8 @@ public class FireBallMove : MonoBehaviour
     {
         if (collision.CompareTag("Player"))               // 부딪히는 collision을 가진 객체의 태그가 "Player"일 경우
         {
+            Instantiate(Deadmotion, collision.gameObject.transform.position, Quaternion.identity);
+            Destroy(collision.gameObject);
             Debug.Log("보스가 히어로를 맞힘");                 // 보스가 히어로 맞힌건지 체크하려고 만들어 둔 거;;
             GetComponent<Collider>().enabled = false;     // 히어로 맞췄으면 파이어볼 삭제 
         }
