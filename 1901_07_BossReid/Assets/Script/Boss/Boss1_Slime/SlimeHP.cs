@@ -5,19 +5,16 @@ using UnityEngine.UI;
 
 public class SlimeHP : MonoBehaviour
 {
-    public float HP;    //demon's HP
-    private float MAX_HP;  //demon's max hp
-    private bool Live;       //is demon alive?
-    public GameObject Explosion;
+    public float HP;    //slime's HP
+    private float MAX_HP;  //slime's max hp
+    private bool Live;       //is slime alive?
+    public GameObject Deadmotion;
 
     public Slider hpSlider;
-
-    //Animator animatorE;
 
 
     void Init()
     {
-        //animatorE = gameObject.GetComponent<Animator>();
 
         MAX_HP = 100;
         HP = MAX_HP;
@@ -34,7 +31,7 @@ public class SlimeHP : MonoBehaviour
         hpSlider.maxValue = MAX_HP;
         hpSlider.value = HP;
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         Init();
@@ -42,22 +39,17 @@ public class SlimeHP : MonoBehaviour
 
     IEnumerator StateCheck()
     {
-        //if demon alive,
+        //if slime alive,
         while (Live)
         {
             if (HP == 0)
             {
-                //animatorE.SetTrigger("isDemonDead");
+                Instantiate(Deadmotion, transform.position, Quaternion.identity); //보스 체력이 0이라면, 보스 있던 자리에 폭발 애니메이션 재생
                 gameObject.SetActive(false);
                 Debug.Log("보스가 사망!");
                 Live = false;
-
             }
             yield return null;
         }
-        //죽는 애니메이션 있다면, 죽었을 때 다른 객체의 영향 안받게
-        //콜라이더 제거하고 죽는 애니메이션 재생 하고 객체 비활성화
-
-
     }
 }

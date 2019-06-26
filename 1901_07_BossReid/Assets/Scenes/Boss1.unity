@@ -296,6 +296,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 479630276}
+  - component: {fileID: 479630277}
   m_Layer: 0
   m_Name: GreenBallLocation
   m_TagString: Untagged
@@ -317,6 +318,20 @@ Transform:
   m_Father: {fileID: 2032971175}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &479630277
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479630275}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.6671392
+  m_Height: 26.040752
+  m_Direction: 0
+  m_Center: {x: 0.46032548, y: -0.086622834, z: -0.101174116}
 --- !u!1001 &831947295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1434,7 +1449,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 2032971166}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.3234085
   m_Height: 2.1144614
   m_Direction: 0
@@ -1452,7 +1467,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 100
-  Explosion: {fileID: 0}
+  Deadmotion: {fileID: 5567796737816513724, guid: 4a9b0900bdd6b4f12b013b6eaca89e3a,
+    type: 3}
   hpSlider: {fileID: 897528646}
 --- !u!54 &2032971169
 Rigidbody:
