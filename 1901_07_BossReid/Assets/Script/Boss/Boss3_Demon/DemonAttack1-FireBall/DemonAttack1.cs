@@ -9,30 +9,12 @@ public class DemonAttack1 : MonoBehaviour
     public Transform FireBallLocation;     // 파이어볼이 발사될 위치
     public float FireDelay;                // 파이어볼 발사 속도(날아가는 속도아님)
     public bool FireState;                 // 발사 속도를 제어할 변수
-    public float arrowSpeed;               // 이건 뭐였지
-     
+
     public int FireBallMaxPool;            // 메모리 풀에 저장할 파이어볼 개수
     private MemoryPool FireBallMPool;      // 메모리 풀
     private GameObject[] FireBallArray;    // 메모리 풀이랑 연동해서 사용할 파이어볼 배열
 
-
-
-
-
-    // Animator animatorF;                    // 불 쏘는 애니메이션 만들려고 
-    //8***8888****************
-    private Quaternion Up = Quaternion.identity;
-
-
-//  DemonController demonMovement = GameObject.Find("Demon").GetComponent<DemonController>();
-//  DemonController demonMovement = GameObject.Gamecomponent<DemonController>;
-//  demonMovement.movementFlag
-//  DemonController demonmovementFlag = GameObject.Find("Demon")
-
-    //만들어야 하는 거 1. 불 방향 좌우 바꾸기 2. 플레이어가 어느 정도 거리를 두고 있을 때 불 저절로 쏘게 만드는 거 3. 파이어볼 개수 랜덤으로 발사**
-
-
-
+    //DemonController2 DemonMovementState = collision.gameObject.GetComponent<DemonController2>();
 
     private void OnApplicationQuit()
     {
@@ -45,14 +27,12 @@ public class DemonAttack1 : MonoBehaviour
         FireBallMPool = new MemoryPool();                     // 메모리 풀을 초기화 
         FireBallMPool.Create(BossFireBall, FireBallMaxPool);  // BossFireBall을 FireballMaxPool만큼 생성
         FireBallArray = new GameObject[FireBallMaxPool];      // 배열을 초기화 해 줌
-
     }
 
     // Update is called once per frame
     void Update()
     {
         BossFire();                     // 매 프레임마다 파이어볼 발사 함수를 체크한다.
-
     }
 
     private void BossFire()  // 파이어볼을 발사하는 함수
@@ -60,37 +40,26 @@ public class DemonAttack1 : MonoBehaviour
         // 제어변수가 true일때만 발동
         if (FireState)
         {
-            // 키보드의 "A"를 누르면
-            if (Input.GetKey(KeyCode.B))
-            // 이거말고 랜덤으로 하는 게 좋을 듯 랜덤 돌려서 맞으면 걍 쏨
+            StartCoroutine(FireCycleControl());          // 코루틴 "FireCycleControl"이 실행되며
+
+            for (int i = 0; i < FireBallMaxPool; i++)    // 파이어볼 풀에서 발사되지 않은 파이어볼을 찾아서 발사
             {
-
-                StartCoroutine(FireCycleControl());          // 코루틴 "FireCycleControl"이 실행되며
-
-                for (int i = 0; i < FireBallMaxPool; i++)    // 파이어볼 풀에서 발사되지 않은 파이어볼을 찾아서 발사
+                if (FireBallArray[i] == null)            // 만약 화살배열[i]가 비어있다면
                 {
-                    if (FireBallArray[i] == null)            // 만약 화살배열[i]가 비어있다면
-                    {
-                        FireBallArray[i] = FireBallMPool.NewItem();                                      // 메모리풀에서 파이어볼을 가져옴
-                        FireBallArray[i].transform.position = FireBallLocation.transform.position;       // 해당 파이어볼의 위치를 파이어볼 발사지점으로 맞춤
+                    FireBallArray[i] = FireBallMPool.NewItem();                                      // 메모리풀에서 파이어볼을 가져옴
+                    FireBallArray[i].transform.position = FireBallLocation.transform.position;       // 해당 파이어볼의 위치를 파이어볼 발사지점으로 맞춤
+                    FireBallArray[i].GetComponent<FireBallMove>().dir = transform.right;             // X축 기준으로 발사
 
-                        // FireBallArray[i].transform.rotation = 
-                        //////////////////////////////////// 아래 코드 가지고 불 회전하는 거 만들려고 했는데 못ㅗㅗ;;
+                    /*
+                  if문 써서 보스 플래그기 왼쪽인지 오른쪽인지 보고 불꽃 방향 바꾸는 라인 추가
+                  if(플래그가 왼쪽이거나 디스트가 레프트)
+                  renderer.filpx = true;
+                  else if(플래그가 오른쪽이거나 디스트가 라이트)
+                  renderer.filpx = false;
+                    */
 
-                        if (Input.GetKey(KeyCode.RightArrow))
-                        {
-                            if (transform.rotation.eulerAngles.y != 0)
-                            {
-                                Up.eulerAngles = new Vector3(0, 0, 0);
-                                transform.rotation = Quaternion.Slerp(transform.rotation, Up, 1);
-                            }
-                            //transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-                        }
 
-                        ////////////////////////////////////
-                        FireBallArray[i].GetComponent<FireBallMove>().dir = transform.right;             // X축 기준으로 발사
-                        break;                                                                           // 발사 후에 for문을 바로 빠져나감
-                    }
+                    break;                                                                           // 발사 후에 for문을 바로 빠져나감
                 }
             }
         }

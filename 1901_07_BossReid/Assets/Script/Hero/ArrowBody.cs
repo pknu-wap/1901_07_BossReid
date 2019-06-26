@@ -10,18 +10,14 @@ public class ArrowBody : MonoBehaviour
     [Range(0f,3f)]
     public float FireDelay;             // 화살 발사 속도(화살이 날아가는 속도x)
     public bool FireState;              // 화살 발사 속도를 제어할 변수
-    public float arrowSpeed;
 
     public int ArrowMaxPool;            //메모리 풀에 저장할 화살 개수
     private MemoryPool MPool;           //메모리 풀
     private GameObject[] ArrowArray;    //메모리 풀이랑 연동해서 사용할 화살 배열
 
-    //Rigidbody rb;
     Rigidbody arrowrb;
 
     Animator animatorA;              //여기도 똑같이 애니메이터 만듬 
-
-    //bool isAttack = false;          //공격을 위한 불 값 변수
 
 
     private void OnApplicationQuit()
@@ -118,12 +114,7 @@ public class ArrowBody : MonoBehaviour
             // FireState를 true로 만든다.
             FireState = true;
         }
-
-
-
     }
-
-
     void AttackAnimationUpdate()                //애니메이터 만든거 공격 버튼 누를 때 마다 불값 트루로 바뀜
     {
         if (Input.GetKey(KeyCode.A))
