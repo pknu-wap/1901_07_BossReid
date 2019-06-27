@@ -31,6 +31,8 @@ public class MonsterSpawnControl : MonoBehaviour
             randomSpawnPoint = Random.Range(0, spawnPoints.Length);
             randomMonster = Random.Range(0, monsters.Length);
             Instantiate(monsters[randomMonster], spawnPoints[randomSpawnPoint].position, Quaternion.identity);
+
+            GameObject.Find("Boss_3_Spawned").GetComponent<AudioSource>().Play();
         }
     }
 }

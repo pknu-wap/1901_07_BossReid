@@ -47,7 +47,6 @@ public class HeroMove : MonoBehaviour
     {
         if (col.gameObject.tag == "Ball")
         {
-            Debug.Log("스턴!");
             moveSpeed = 0f;
             jumpPower = 0f;
             Fstate.FireState = false;               // 스턴 상태일 때 공격 안나가게 공격 불가 상태로 만듬
@@ -63,6 +62,7 @@ public class HeroMove : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         { 
             isJumping = true;
+            GameObject.Find("Hero_Jump").GetComponent<AudioSource>().Play();
             animator.SetTrigger("isJumping");
         }
  
@@ -80,9 +80,7 @@ public class HeroMove : MonoBehaviour
     IEnumerator TimeStun()
     {
         stun = true;
-        Debug.Log("못움직임");
         yield return new WaitForSeconds(2f);
-        Debug.Log("움직임");
         stun = false;
         moveSpeed = 2f;
         jumpPower = 3f;

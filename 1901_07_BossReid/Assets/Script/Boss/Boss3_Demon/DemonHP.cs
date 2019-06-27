@@ -25,8 +25,6 @@ public class DemonHP : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(HP);
-
         hpSlider.maxValue = MAX_HP;
         hpSlider.value = HP;
     }
@@ -44,11 +42,11 @@ public class DemonHP : MonoBehaviour
             if(HP==0)
             {
                 //보스 체력이 0이라면, 보스 있던 자리에 폭발 애니메이션 재생
-                Instantiate(Deadmotion, transform.position, Quaternion.identity); 
+                Instantiate(Deadmotion, transform.position, Quaternion.identity);
+
+                GameObject.Find("Explosion").GetComponent<AudioSource>().Play();
                 gameObject.SetActive(false);
-                Debug.Log("보스가 사망!");
                 Live = false;
-          
             }
             yield return null;
         }

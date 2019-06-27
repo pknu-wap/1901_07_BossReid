@@ -46,6 +46,8 @@ public class WizardAttack1 : MonoBehaviour
                     FireBallArray[i] = FireBallMPool.NewItem();                                      // 메모리풀에서 파이어볼을 가져옴
                     FireBallArray[i].transform.position = FireBallLocation.transform.position;       // 해당 파이어볼의 위치를 파이어볼 발사지점으로 맞춤
                     FireBallArray[i].GetComponent<FireBallMove>().dir = transform.right;             // X축 기준으로 발사
+
+                    GameObject.Find("Boss_2_Attack").GetComponent<AudioSource>().Play();
                     break;                                                                           // 발사 후에 for문을 바로 빠져나감
                 }
             }

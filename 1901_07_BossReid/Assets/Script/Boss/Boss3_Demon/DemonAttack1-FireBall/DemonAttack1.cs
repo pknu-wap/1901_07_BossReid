@@ -49,7 +49,7 @@ public class DemonAttack1 : MonoBehaviour
                     FireBallArray[i] = FireBallMPool.NewItem();                                      // 메모리풀에서 파이어볼을 가져옴
                     FireBallArray[i].transform.position = FireBallLocation.transform.position;       // 해당 파이어볼의 위치를 파이어볼 발사지점으로 맞춤
                     FireBallArray[i].GetComponent<FireBallMove>().dir = transform.right;             // X축 기준으로 발사
-
+                    GameObject.Find("Boss_3_FireBall").GetComponent<AudioSource>().Play();
                     /*
                   if문 써서 보스 플래그기 왼쪽인지 오른쪽인지 보고 불꽃 방향 바꾸는 라인 추가
                   if(플래그가 왼쪽이거나 디스트가 레프트)
@@ -70,7 +70,7 @@ public class DemonAttack1 : MonoBehaviour
 
                     GetComponent.trasnform.eularAngles
                     */
-                  
+
 
 
                     break;                                                                           // 발사 후에 for문을 바로 빠져나감

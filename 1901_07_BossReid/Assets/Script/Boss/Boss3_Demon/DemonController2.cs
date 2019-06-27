@@ -70,6 +70,7 @@ public class DemonController2 : MonoBehaviour
     IEnumerator AttackTime()
     {
         animator.SetBool("isTracing", true);
+        GameObject.Find("Boss_3_Roar").GetComponent<AudioSource>().Play();
 
         yield return new WaitForSeconds(3f);
 

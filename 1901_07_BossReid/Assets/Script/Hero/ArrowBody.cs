@@ -74,6 +74,9 @@ public class ArrowBody : MonoBehaviour
                         // 해당 화살의 위치를 화살 발사지점으로 맞춘다.
                         ArrowArray[i].transform.position = ArrowLocation.transform.position;
                         ArrowArray[i].GetComponent<ArrowMove>().dir = transform.right;
+
+                        GameObject.Find("Hero_Attack").GetComponent<AudioSource>().Play();
+
                         //공격 애니메이션 끄는 타이밍
                         animatorA.SetBool("isAttack", false);          
                         // 발사 후에 for문을 바로 빠져나간다.

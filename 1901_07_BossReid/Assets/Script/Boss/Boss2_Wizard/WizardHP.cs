@@ -26,8 +26,6 @@ public class WizardHP : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(HP);
-
         hpSlider.maxValue = MAX_HP;
         hpSlider.value = HP;
     }
@@ -45,8 +43,10 @@ public class WizardHP : MonoBehaviour
             if (HP == 0)
             {
                 Instantiate(Deadmotion, transform.position, Quaternion.identity); //보스 체력이 0이라면, 보스 있던 자리에 폭발 애니메이션 재생
+
+                GameObject.Find("Explosion").GetComponent<AudioSource>().Play();
+
                 gameObject.SetActive(false);
-                Debug.Log("보스가 사망!");
                 Live = false;
 
             }
