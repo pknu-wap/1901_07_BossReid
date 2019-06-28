@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SlimeHP : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class SlimeHP : MonoBehaviour
     void Init()
     {
 
-        MAX_HP = 100;
+        MAX_HP = 30;
         HP = MAX_HP;
         Live = true;
 
@@ -46,6 +47,7 @@ public class SlimeHP : MonoBehaviour
                 GameObject.Find("Explosion").GetComponent<AudioSource>().Play();
                 gameObject.SetActive(false);
                 Live = false;
+                SceneManager.LoadScene("Boss2");
             }
             yield return null;
         }

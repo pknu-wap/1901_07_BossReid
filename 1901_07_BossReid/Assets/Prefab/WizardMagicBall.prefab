@@ -119,6 +119,8 @@ MonoBehaviour:
   dir: {x: 0, y: 0, z: 0}
   Deadmotion: {fileID: 5567796737816513724, guid: 4a9b0900bdd6b4f12b013b6eaca89e3a,
     type: 3}
+  MenuWizard: {fileID: 2356369270301179471, guid: b7839778f18aebf4381bedc133cb99a8,
+    type: 3}
 --- !u!65 &8155654242303893120
 BoxCollider:
   m_ObjectHideFlags: 0

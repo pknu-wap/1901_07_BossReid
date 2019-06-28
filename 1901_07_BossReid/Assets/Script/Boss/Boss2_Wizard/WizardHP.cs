@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WizardHP : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class WizardHP : MonoBehaviour
     void Init()
     {
 
-        MAX_HP = 100;
+        MAX_HP = 50;
         HP = MAX_HP;
         Live = true;
 
@@ -48,6 +49,7 @@ public class WizardHP : MonoBehaviour
 
                 gameObject.SetActive(false);
                 Live = false;
+                SceneManager.LoadScene("SampleScene");
 
             }
             yield return null;

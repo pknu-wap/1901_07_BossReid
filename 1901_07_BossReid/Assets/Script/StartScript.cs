@@ -14,4 +14,9 @@ public class StartScript : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Boss3()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
 }

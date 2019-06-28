@@ -9,13 +9,14 @@ public class DemonHP : MonoBehaviour
     private float MAX_HP;  //demon's max hp
     private bool Live;       //is demon alive?
     public GameObject Deadmotion;
+    public GameObject DemonMenu;
 
     public Slider hpSlider;
 
 
     void Init()
     {
-        MAX_HP =100;
+        MAX_HP = 100;
         HP = MAX_HP;
         Live = true;
 
@@ -47,6 +48,7 @@ public class DemonHP : MonoBehaviour
                 GameObject.Find("Explosion").GetComponent<AudioSource>().Play();
                 gameObject.SetActive(false);
                 Live = false;
+                DemonMenu.SetActive(true);
             }
             yield return null;
         }

@@ -8,6 +8,8 @@ public class FireBallMove : MonoBehaviour
     public float MoveSpeed;
     public Vector3 dir;
     public GameObject Deadmotion;
+    public GameObject MenuWizard;
+    public bool isHeroDead;
 
     void Update()
     {
@@ -23,8 +25,10 @@ public class FireBallMove : MonoBehaviour
             GameObject.Find("Explosion").GetComponent<AudioSource>().Play();
 
             Destroy(collision.gameObject);
+            isHeroDead = true;
    
             GetComponent<Collider>().enabled = false;     // 히어로 맞췄으면 파이어볼 삭제 
+            MenuWizard.SetActive(true);
         }
 
         if (collision.CompareTag("Ground"))               // 부딪히는 객체 태그가 "Ground" 일 경우 

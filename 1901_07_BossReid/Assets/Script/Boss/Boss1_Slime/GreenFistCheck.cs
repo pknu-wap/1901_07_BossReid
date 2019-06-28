@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class GreenFistCheck : MonoBehaviour
 {
-
-    public SlimeController state;
+    //public SlimeController state;
     public GameObject Deadmotion;
+    public GameObject Menu;
 
     void OnTriggerEnter(Collider other)
     {
@@ -18,6 +18,7 @@ public class GreenFistCheck : MonoBehaviour
             Instantiate(Deadmotion,other.gameObject.transform.position, Quaternion.identity); // 플레이어 자리에 explosion 발생
             GameObject.Find("Explosion").GetComponent<AudioSource>().Play();
             Destroy(other.gameObject); // 플레이어 파괴
+            Menu.SetActive(true);
           //  }
 
         }
